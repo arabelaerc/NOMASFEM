@@ -3,7 +3,7 @@ $red : #c72b55;
 $red-overlay :rgba(199, 43, 85, 0.83);;
 $purple : #713acd;
 $white: #FFFFFF;
-$gray-dark : #565656;
+$gray-dark : #2b2b2b;
 $gray-soft : #B7B7B7;
 $gray-light: #f7f7f7;
 
@@ -32,14 +32,10 @@ $gray-light: #f7f7f7;
 @mixin border-radius($radius) {
    border-radius: $radius;
 }
-@mixin border-style-tag{
-   border : 1px solid $gray-dark;
+@mixin border-style-tag($border){
+   border : $border;
 }
 
-.tag {
-  color : $gray-dark;
-  @include border-style-tag;
-}
 
 /*Containers*/
 .container {
@@ -80,7 +76,7 @@ $column-width : 100%/$columns;
 $breakpoints : (xs : 0, sm : 768px, md : 992px, lg : 1200px );
 [class*="col-"] {
   float: left;
-  padding: 15px;
+  padding: 0 0;
 }
 @function column-width($column){
   @return $column-width*$column;
@@ -111,17 +107,17 @@ $breakpoints : (xs : 0, sm : 768px, md : 992px, lg : 1200px );
   padding-top: $top;
   padding-bottom: $bottom;
 }
-@mixin Padding-Width($top, $bottom:0){
-  padding-left: $top;
-  padding-right: $bottom;
+@mixin Padding-Width($left, $right:0){
+  padding-left: $left;
+  padding-right: $right;
 }
 @mixin Margin-Height($top, $bottom:0){
   margin-top: $top;
   margin-bottom: $bottom;
 }
-@mixin Margin-Width($top, $bottom:0){
-  margin-left: $top;
-  margin-right: $bottom;
+@mixin Margin-Width($left, $right:0){
+  margin-left: $left;
+  margin-right: $right;
 }
 /*Flex*/
 
@@ -151,10 +147,16 @@ $breakpoints : (xs : 0, sm : 768px, md : 992px, lg : 1200px );
   background-position: center;
   background-size: cover;
 }
+@mixin background-color($background-color){
+  background-color: $background-color;
+}
 /*General Styles*/
 /*Backgrounds*/
 .bg-gray-light {
   background-color: $gray-light;
+}
+.bg-red-light{
+  background-color: $red;
 }
 /**/
 html, body{
@@ -193,7 +195,7 @@ header{
     @include text-alignment(center);
     .btn-findout{
       @include Padding-height($top:12px, $bottom:12px);
-      @include Padding-Width($top:26px, $bottom:26px);
+      @include Padding-Width($left:26px, $right:26px);
       @include border-radius(3px);
       background-color: $purple;
       color: $white;
@@ -203,16 +205,43 @@ header{
 }
 .filter-section{
   @include hero-height(695px);
-  h1,h2,h3,h4,h5,h6{
+  h1,h2,h3,h4,h5{
     @include Margin-Height($top:0, $bottom:0);
     @include transform-txt(uppercase);
   }
   h5{
     @include Padding-height($top:20px, $bottom:12px);
+    display: inline-block;
     font-size: 1.2rem;
     color:$purple;
   }
   h6{
     color :$purple;
+    font-size: 18px;
+  }
+  span.tag-fill{
+    @include Padding-height($top:8px, $bottom:8px);
+    @include Padding-Width($left:15px, $right:15px);
+    @include transform-txt(uppercase);
+    @include background-color($red);
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: $white;
+  }
+}
+.tag {
+  color : $gray-dark;
+  font-size: 0.7rem;
+  font-weight: 700;
+  @include transform-txt(uppercase);
+  @include Padding-height($top:3px, $bottom:3px);
+  @include Padding-Width($left:3px, $right:3px);
+  @include border-style-tag(2px solid $gray-dark);
+  @include Margin-Width($left:0, $right:8px);
+  &:hover{
+    color:$white;
+    background-color: $red;
+    transition-duration: 0.5;
+    @include border-style-tag(2px solid $red);
   }
 }

@@ -165,7 +165,7 @@ html, body{
   padding:0;
 }
 h1,h2,h3,h4,h5,h6{font-family: 'Fjalla One', sans-serif;};
-p,span,input,a,label{font-family: 'Montserrat', sans-serif};
+p,span,input,a,label,.text-profile {font-family: 'Montserrat', sans-serif};
 
 header{
   h1,h2,h3,h4,h5,h6{
@@ -244,4 +244,10 @@ header{
     transition-duration: 0.5;
     @include border-style-tag(2px solid $red);
   }
+}
+.img-profile > img{
+  @include width(100%);
+}
+.text-profile {
+  font-size: 0.7rem;
 }

@@ -241,7 +241,7 @@ header{
   &:hover{
     color:$white;
     background-color: $red;
-    transition-duration: 0.5;
+    transition-duration: 1.2;
     @include border-style-tag(2px solid $red);
   }
 }
@@ -250,4 +250,29 @@ header{
 }
 .text-profile {
   font-size: 0.7rem;
+}
+.no-margin-bottom{
+  @include Margin-Height($top:40px,$bottom:0);
+}
+.filter-section{
+  .container{
+    .row{
+      .col-md-12{
+        table{
+          thead{
+            @include text-alignment(left);
+            tr{
+              th{
+                border-bottom: 2px solid $gray-soft;
+                @include width(100%);
+              }
+            }
+          }
+          tbody{
+            @include text-alignment(left);
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,0 +1,218 @@
+/*Settings colors*/
+$red : #c72b55;
+$red-overlay :rgba(199, 43, 85, 0.83);;
+$purple : #713acd;
+$white: #FFFFFF;
+$gray-dark : #565656;
+$gray-soft : #B7B7B7;
+$gray-light: #f7f7f7;
+
+
+/*Text aligment*/
+@mixin text-alignment($text-align){
+  text-align: $text-align;
+}
+@mixin transform-txt($text-transform){
+  text-transform: $text-transform;
+}
+/*Position*/
+@mixin positioned-in($position){
+  position: $position;
+}
+/*Height and width*/
+
+@mixin hero-height($height){
+  height: $height;
+}
+@mixin width($width){
+  width: $width;
+}
+
+/*Borders*/
+@mixin border-radius($radius) {
+   border-radius: $radius;
+}
+@mixin border-style-tag{
+   border : 1px solid $gray-dark;
+}
+
+.tag {
+  color : $gray-dark;
+  @include border-style-tag;
+}
+
+/*Containers*/
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+@media screen and (max-width: 1200px){
+  .container {
+    width: 1140px;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 992px){
+  .container {
+    width: 960px;
+    max-width: 100%;
+  }
+}
+@media screen and (min-width: 1200px){
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+@media screen and (min-width: 992px){
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+/*Grid*/
+
+$columns : 12;
+$column-width : 100%/$columns;
+$breakpoints : (xs : 0, sm : 768px, md : 992px, lg : 1200px );
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+@function column-width($column){
+  @return $column-width*$column;
+}
+@mixin column($media, $min-width){
+  @media (min-width:$min-width){
+    @for $i from 1 through $columns {
+      .col-#{$media}-#{$i} {
+        width: column-width($i);
+      }
+    }
+  }
+}
+@each $name, $width in $breakpoints {
+  @include column($name, $width);
+}
+.row {
+  margin: 0 auto;
+  &::before {
+    content: '';
+    clear: both;
+	  display:table;
+  }
+}
+/*Paddings and margins*/
+
+@mixin Padding-height($top, $bottom:0){
+  padding-top: $top;
+  padding-bottom: $bottom;
+}
+@mixin Padding-Width($top, $bottom:0){
+  padding-left: $top;
+  padding-right: $bottom;
+}
+@mixin Margin-Height($top, $bottom:0){
+  margin-top: $top;
+  margin-bottom: $bottom;
+}
+@mixin Margin-Width($top, $bottom:0){
+  margin-left: $top;
+  margin-right: $bottom;
+}
+/*Flex*/
+
+@mixin flex-container{
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+@mixin flex-start { -webkit-align-self: flex-start; align-self: flex-start; }
+@mixin flex-end { -webkit-align-self: flex-end; align-self: flex-end; }
+@mixin center { -webkit-align-self: center; align-self: center; }
+@mixin baseline { -webkit-align-self: baseline; align-self: baseline; }
+@mixin stretch { -webkit-align-self: stretch; align-self: stretch; }
+/*Background*/
+@mixin background-settings{
+  background-image:  url(../img/group.jpg);
+  background-position: center;
+  background-size: cover;
+}
+/*General Styles*/
+/*Backgrounds*/
+.bg-gray-light {
+  background-color: $gray-light;
+}
+/**/
+html, body{
+  border:0;
+  margin:0;
+  padding:0;
+}
+h1,h2,h3,h4,h5,h6{font-family: 'Fjalla One', sans-serif;};
+p,span,input,a,label{font-family: 'Montserrat', sans-serif};
+
+header{
+  h1,h2,h3,h4,h5,h6{
+    @include Margin-Height($top:0, $bottom:0);
+    @include transform-txt(uppercase);
+  }
+  h1,h4{
+    font-size:2.5rem ;
+  }
+  h2{
+    font-size: 18rem;
+  }
+  h3{
+    font-size: 3.5rem;
+  }
+  @include background-settings;
+  @include hero-height(740px);
+}
+.hero-styles{
+  @include flex-container;
+  color :$white;
+  background-color: $red-overlay;
+  @include width(100%);
+  @include hero-height(740px);
+  .content-hero{
+    @include center;
+    @include text-alignment(center);
+    .btn-findout{
+      @include Padding-height($top:12px, $bottom:12px);
+      @include Padding-Width($top:26px, $bottom:26px);
+      @include border-radius(3px);
+      background-color: $purple;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+.filter-section{
+  @include hero-height(695px);
+  h1,h2,h3,h4,h5,h6{
+    @include Margin-Height($top:0, $bottom:0);
+    @include transform-txt(uppercase);
+  }
+  h5{
+    @include Padding-height($top:20px, $bottom:12px);
+    font-size: 1.2rem;
+    color:$purple;
+  }
+  h6{
+    color :$purple;
+  }
+}

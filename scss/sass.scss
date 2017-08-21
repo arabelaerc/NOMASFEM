@@ -21,8 +21,11 @@ $gray-light: #f7f7f7;
 }
 /*Height and width*/
 
-@mixin hero-height($height){
+@mixin height($height){
   height: $height;
+}
+@mixin min-height($min-height){
+  min-height: $min-height;
 }
 @mixin width($width){
   width: $width;
@@ -32,7 +35,7 @@ $gray-light: #f7f7f7;
 @mixin border-radius($radius) {
    border-radius: $radius;
 }
-@mixin border-style-tag($border){
+@mixin border-style-width($border){
    border : $border;
 }
 
@@ -103,19 +106,19 @@ $breakpoints : (xs : 0, sm : 768px, md : 992px, lg : 1200px );
 }
 /*Paddings and margins*/
 
-@mixin Padding-height($top, $bottom:0){
+@mixin padding-height($top, $bottom:0){
   padding-top: $top;
   padding-bottom: $bottom;
 }
-@mixin Padding-Width($left, $right:0){
+@mixin padding-width($left, $right:0){
   padding-left: $left;
   padding-right: $right;
 }
-@mixin Margin-Height($top, $bottom:0){
+@mixin margin-height($top, $bottom:0){
   margin-top: $top;
   margin-bottom: $bottom;
 }
-@mixin Margin-Width($left, $right:0){
+@mixin margin-width($left, $right:0){
   margin-left: $left;
   margin-right: $right;
 }
@@ -164,12 +167,18 @@ html, body{
   margin:0;
   padding:0;
 }
+html {
+  min-height: 100%;
+}
+body {
+  min-height: 100%;
+}
 h1,h2,h3,h4,h5,h6{font-family: 'Fjalla One', sans-serif;};
-p,span,input,a,label,.text-profile {font-family: 'Montserrat', sans-serif};
+p,span,input,a,label,.text-profile, th, td, placeholder{font-family: 'Montserrat', sans-serif};
 
 header{
   h1,h2,h3,h4,h5,h6{
-    @include Margin-Height($top:0, $bottom:0);
+    @include margin-height($top:0, $bottom:0);
     @include transform-txt(uppercase);
   }
   h1,h4{
@@ -182,20 +191,20 @@ header{
     font-size: 3.5rem;
   }
   @include background-settings;
-  @include hero-height(740px);
+  @include height(740px);
 }
 .hero-styles{
   @include flex-container;
   color :$white;
   background-color: $red-overlay;
   @include width(100%);
-  @include hero-height(740px);
+  @include height(740px);
   .content-hero{
     @include center;
     @include text-alignment(center);
     .btn-findout{
-      @include Padding-height($top:12px, $bottom:12px);
-      @include Padding-Width($left:26px, $right:26px);
+      @include padding-height($top:12px, $bottom:12px);
+      @include padding-width($left:26px, $right:26px);
       @include border-radius(3px);
       background-color: $purple;
       color: $white;
@@ -203,46 +212,21 @@ header{
     }
   }
 }
-.filter-section{
-  @include hero-height(695px);
-  h1,h2,h3,h4,h5{
-    @include Margin-Height($top:0, $bottom:0);
-    @include transform-txt(uppercase);
-  }
-  h5{
-    @include Padding-height($top:20px, $bottom:12px);
-    display: inline-block;
-    font-size: 1.2rem;
-    color:$purple;
-  }
-  h6{
-    color :$purple;
-    font-size: 18px;
-  }
-  span.tag-fill{
-    @include Padding-height($top:8px, $bottom:8px);
-    @include Padding-Width($left:15px, $right:15px);
-    @include transform-txt(uppercase);
-    @include background-color($red);
-    font-weight: 700;
-    font-size: 0.8rem;
-    color: $white;
-  }
-}
+
 .tag {
   color : $gray-dark;
   font-size: 0.7rem;
   font-weight: 700;
   @include transform-txt(uppercase);
-  @include Padding-height($top:3px, $bottom:3px);
-  @include Padding-Width($left:3px, $right:3px);
-  @include border-style-tag(2px solid $gray-dark);
-  @include Margin-Width($left:0, $right:8px);
+  @include padding-height($top:3px, $bottom:3px);
+  @include padding-width($left:3px, $right:3px);
+  @include border-style-width(2px solid $gray-dark);
+  @include margin-width($left:0, $right:8px);
   &:hover{
     color:$white;
     background-color: $red;
     transition-duration: 1.2;
-    @include border-style-tag(2px solid $red);
+    @include border-style-width(2px solid $red);
   }
 }
 .img-profile > img{
@@ -252,25 +236,148 @@ header{
   font-size: 0.7rem;
 }
 .no-margin-bottom{
-  @include Margin-Height($top:40px,$bottom:0);
+  @include margin-height($top:40px,$bottom:2px);
 }
 .filter-section{
+  @include min-height(70px);
+  .content-first-filter-section{
+    @include padding-width($left:15px, $right:15px);
+  }
+  h1,h2,h3,h4,h5{
+    @include margin-height($top:0, $bottom:0);
+    @include transform-txt(uppercase);
+  }
+  h5{
+    @include padding-height($top:20px, $bottom:12px);
+    display: inline-block;
+    font-size: 1.2rem;
+    color:$purple;
+  }
+  h6{
+    color :$purple;
+    font-size: 18px;
+    @include padding-width($left:5px, $right:0);
+  }
+  span.tag-fill{
+    @include padding-height($top:8px, $bottom:8px);
+    @include padding-width($left:15px, $right:15px);
+    @include transform-txt(uppercase);
+    @include background-color($red);
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: $white;
+  }
   .container{
     .row{
+        @include padding-height($top:40px,$bottom:40px);
+      .col-md-7{
+        .content-tables-data{
+          @include padding-width($left:15px, $right:15px);
+          .col-md-12{
+            form{
+              input{
+                @include border-style-width(none);
+                @include padding-height($top:5px,$bottom:5px);
+                &:focus{
+                  outline:none;
+                }
+              }
+            }
+          }
+        }
+      }
       .col-md-12{
         table{
+            border-spacing: 0;
+            border-collapse: separate;
+            @include padding-width($left:15px, $right:15px);
           thead{
             @include text-alignment(left);
             tr{
               th{
                 border-bottom: 2px solid $gray-soft;
-                @include width(100%);
               }
             }
           }
           tbody{
             @include text-alignment(left);
+            tr{
+              @include width(100%);
+              td:first-child{
+                border-bottom: 2px solid $gray-soft;
+                color: $gray-dark;
+                font-weight: 500;
+                font-size: 0.9rem;
+                @include width(90%);
+                @include padding-width($left:5px, $right:0);
+                @include padding-height($top:7px, $bottom:7px);
+              }
+              td:nth-child(2){
+                @include width(10%);
+                color: $gray-soft;
+                font-weight: 500;
+                @include text-alignment(right);
+                border-bottom: 2px solid $gray-soft;
+                @include padding-width($left:0, $right:5px);
+              }
+            }
           }
+        }
+      }
+    }
+  }
+}
+.content-tables-data{
+  .col-md-4{
+    table{
+        border-spacing: 0;
+        border-collapse: separate;
+      thead{
+        @include text-alignment(left);
+        tr{
+          th{
+            border-bottom: 2px solid $gray-soft;
+          }
+        }
+      }
+      tbody{
+        @include text-alignment(left);
+        tr{
+          @include width(100%);
+          td:first-child{
+            border-bottom: 2px solid $gray-soft;
+            color: $gray-dark;
+            font-weight: 500;
+            font-size: 0.9rem;
+            @include width(90%);
+            @include padding-width($left:5px, $right:0);
+            @include padding-height($top:7px, $bottom:7px);
+          }
+          td:nth-child(2){
+            @include width(10%);
+            color: $gray-soft;
+            font-weight: 500;
+            @include text-alignment(right);
+            border-bottom: 2px solid $gray-soft;
+            @include padding-width($left:0, $right:5px);
+          }
+        }
+      }
+    }
+  }
+}
+.grid-images{
+  .container{
+    .row{
+        @include margin-height($top:40px,$bottom:40px);
+        @include flex-container;
+      .col-md-12{
+        @include padding-width($left:15px, $right:15px);
+      }
+      .col-md-3{
+        @include center;
+        .content-profile{
+          @include padding-width($left:15px, $right:15px);
         }
       }
     }

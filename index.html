@@ -4,7 +4,7 @@
     <meta charset="UTF-8" lang="es">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/master.min.css">
     <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One&amp;subset=latin-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500" rel="stylesheet">
     <title>No+FEM</title>
@@ -26,12 +26,13 @@
       <div class="container">
         <div class="row">
           <div class="col-md-5">
-            <h5>124 Mujeres |</h5> <span class="tag-fill">arequipa &nbsp; X</span> <span class="tag-fill">Celos&nbsp;X</span>
-            <h6>Departamento</h6>
-            <span class="tag">amazonas</span><span class="tag">ancash</span><span class="tag">apurimac</span><span class="tag">arequipa</span><br><br>
-            <span class="tag">ayacucho</span><span class="tag">cajamarca</span><span class="tag">callao</span><span class="tag">cusco</span><br><br>
-            <span class="tag">huancavelica</span><span class="tag">huánuco</span><span class="tag">ica</span><span class="tag">junín</span><span class="tag">la libertad</span><br><br>
-
+              <div class="content-first-filter-section">
+                <h5>124 Mujeres |</h5> <span class="tag-fill">arequipa &nbsp; X</span> <span class="tag-fill">Celos&nbsp;X</span>
+                <h5>Departamento</h5>
+                <span class="tag">amazonas</span><span class="tag">ancash</span><span class="tag">apurimac</span><span class="tag">arequipa</span><br><br>
+                <span class="tag">ayacucho</span><span class="tag">cajamarca</span><span class="tag">callao</span><span class="tag">cusco</span><br><br>
+                <span class="tag">huancavelica</span><span class="tag">huánuco</span><span class="tag">ica</span><span class="tag">junín</span><span class="tag">la libertad</span><br><br>
+              </div>
             <div class="col-md-12">
               <table width="100%">
                 <thead width="100%">
@@ -39,69 +40,247 @@
                     <th>
                         <h6 class="no-margin-bottom">Edad</h6>
                     </th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">N-3</th>
+                    <td>Menor de 18 años</td>
+                    <td>99</td>
                   </tr>
                   <tr>
-                    <th scope="row">N-2</th>
+                    <td>18 a 29 años</td>
+                    <td>99</td>
                   </tr>
                   <tr>
-                    <th scope="row">N-1</th>
+                    <td>30 a 44 años</td>
+                    <td>99</td>
                   </tr>
                   <tr>
-                    <th scope="row">N</th>
+                    <td>45 a más</td>
+                    <td>99</td>
+                  </tr>
+                  <tr>
+                    <td>Desconocida</td>
+                    <td>99</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <div class="col-md-7"></div>
+          <div class="col-md-7">
+            <div class="content-tables-data">
+              <div class="col-md-12">
+                <h6 class="no-margin-bottom">Hijos</h6>
+                <form>
+                  <input type="text" placeholder="Ingresar cantidad">
+                </form>
+              </div>
+              <div class="col-md-4">
+                <table width="100%">
+                  <thead width="100%">
+                    <tr>
+                      <th>
+                          <h6 class="no-margin-bottom">Embarazo</h6>
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Si</td>
+                      <td>99</td>
+                    </tr>
+                    <tr>
+                      <td>No</td>
+                      <td>99</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table width="100%">
+                  <thead width="100%">
+                    <tr>
+                      <th>
+                          <h6 class="no-margin-bottom">Edad del agresor</h6>
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Menor de 18 años</td>
+                      <td>99</td>
+                    </tr>
+                    <tr>
+                      <td>18 a 29 años</td>
+                      <td>99</td>
+                    </tr>
+                    <tr>
+                      <td>30 a 44 años</td>
+                      <td>99</td>
+                    </tr>
+                    <tr>
+                      <td>45 a más</td>
+                      <td>99</td>
+                    </tr>
+                    <tr>
+                      <td>Desconocida</td>
+                      <td>99</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table width="100%">
+                  <thead width="100%">
+                    <tr>
+                      <th>
+                          <h6 class="no-margin-bottom">Efectos del acohol</h6>
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Si</td>
+                      <td>99</td>
+                    </tr>
+                    <tr>
+                      <td>No</td>
+                      <td>99</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table width="100%">
+                  <thead width="100%">
+                    <tr>
+                      <th>
+                          <h6 class="no-margin-bottom">Vínculo con el agresor</h6>
+                      </th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Pareja</td>
+                      <td>99</td>
+                    </tr>
+                    <tr>
+                      <td>Amigo</td>
+                      <td>99</td>
+                    </tr>
+                    <tr>
+                      <td>Compañero Laboral</td>
+                      <td>99</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              <div class="col-md-4"></div>
+              <div class="col-md-4"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section>
-
+    <section class="filter-middle">
+      <div class="container">
+        <div class="row"></div>
+      </div>
     </section>
     <section class="grid-images">
       <div class="container">
         <div class="row">
+          <div class="col-md-12">
+            <h4>Listado de Victimas</h4>
+          </div>
           <div class="col-md-3">
-            <div class="img-profile">
-              <img src="img/girls.jpg" alt="">
-            </div>
-            <div class="text-profile">
-              Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-              Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+            <div class="content-profile">
+              <div class="img-profile">
+                <img src="img/girls.jpg" alt="">
+              </div>
+              <div class="text-profile">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+              </div>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="img-profile">
-              <img src="img/girls.jpg" alt="">
-            </div>
-            <div class="text-profile">
-              Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-              Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="img-profile">
-              <img src="img/girls.jpg" alt="">
-            </div>
-            <div class="text-profile">
-              Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-              Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+            <div class="content-profile">
+              <div class="img-profile">
+                <img src="img/girls.jpg" alt="">
+              </div>
+              <div class="text-profile">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+              </div>
             </div>
           </div>
           <div class="col-md-3">
-            <div class="img-profile">
-              <img src="img/girls.jpg" alt="">
+            <div class="content-profile">
+              <div class="img-profile">
+                <img src="img/girls.jpg" alt="">
+              </div>
+              <div class="text-profile">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+              </div>
             </div>
-            <div class="text-profile">
-              Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
-              Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+          </div>
+          <div class="col-md-3">
+            <div class="content-profile">
+              <div class="img-profile">
+                <img src="img/girls.jpg" alt="">
+              </div>
+              <div class="text-profile">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="content-profile">
+              <div class="img-profile">
+                <img src="img/girls.jpg" alt="">
+              </div>
+              <div class="text-profile">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="content-profile">
+              <div class="img-profile">
+                <img src="img/girls.jpg" alt="">
+              </div>
+              <div class="text-profile">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="content-profile">
+              <div class="img-profile">
+                <img src="img/girls.jpg" alt="">
+              </div>
+              <div class="text-profile">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="content-profile">
+              <div class="img-profile">
+                <img src="img/girls.jpg" alt="">
+              </div>
+              <div class="text-profile">
+                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
+                Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500.
+              </div>
             </div>
           </div>
         </div>

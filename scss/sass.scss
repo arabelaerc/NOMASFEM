@@ -396,6 +396,7 @@ header{
         @include margin-height($top:40px,$bottom:40px);
       .col-md-12{
         @include padding-width($left:15px, $right:15px);
+        @include margin-height($top:20px,$bottom:0);
       }
       .col-md-3{
         .content-profile{

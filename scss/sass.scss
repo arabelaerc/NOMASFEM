@@ -191,14 +191,14 @@ header{
     font-size: 3.5rem;
   }
   @include background-settings;
-  @include height(740px);
+  @include height(100vh);
 }
 .hero-styles{
   @include flex-container;
   color :$white;
   background-color: $red-overlay;
   @include width(100%);
-  @include height(740px);
+  @include height(100vh);
   .content-hero{
     @include center;
     @include text-alignment(center);

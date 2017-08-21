@@ -239,7 +239,7 @@ header{
   @include margin-height($top:40px,$bottom:2px);
 }
 .filter-section{
-  @include min-height(70px);
+  @include min-height(900px);
   .content-first-filter-section{
     @include padding-width($left:15px, $right:15px);
   }
@@ -278,6 +278,7 @@ header{
               input{
                 @include border-style-width(none);
                 @include padding-height($top:5px,$bottom:5px);
+                @include padding-width($left:7px, $right:0);
                 &:focus{
                   outline:none;
                 }
@@ -332,6 +333,7 @@ header{
     table{
         border-spacing: 0;
         border-collapse: separate;
+        @include padding-width($left:0px, $right:15px);
       thead{
         @include text-alignment(left);
         tr{
@@ -366,18 +368,34 @@ header{
     }
   }
 }
+.filter-middle{
+    @include height(700px);
+  .container{
+    .row{
+        @include padding-height($top:40px,$bottom:40px);
+      .col-md-12{
+        .january{
+            @include padding-width($left:15px, $right:15px);
+          img{
+            width:1.5%;
+            float:left;
+          }
+        }
+      }
+    }
+  }
+}
 .grid-images{
   .container{
     .row{
         @include margin-height($top:40px,$bottom:40px);
-        @include flex-container;
       .col-md-12{
         @include padding-width($left:15px, $right:15px);
       }
       .col-md-3{
-        @include center;
         .content-profile{
           @include padding-width($left:15px, $right:15px);
+          @include margin-height($top:0,$bottom:40px);
         }
       }
     }
